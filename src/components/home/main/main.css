@@ -1,0 +1,163 @@
+.assinatura{
+   background: url("../../../assets/imgs/background-movies-series.png") no-repeat;
+   background-size: cover;
+   position: relative;
+}
+
+.assinatura__title{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.c-assinatura__cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 80px;
+    margin-top: 40px;
+    perspective: 2000px;
+    perspective-origin: top;
+    
+}
+
+.assinatura__card{
+    background: var(--card-bg-color);
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+    border-radius: 8px;
+    transition: transform 1s ease-in-out;
+}
+
+.c-assinatura__cards:has(.assinatura__card:nth-child(1):hover) 
+.assinatura__card:nth-child(2){
+    transform: rotateY(-45deg);
+}
+
+.c-assinatura__cards:has(.assinatura__card:nth-child(2):hover)
+.assinatura__card:nth-child(1){
+    transform: rotateY(45deg);
+}
+
+.assinatura__card-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+}
+
+.assinatura__card-price{
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.assinatura__descricao{
+    text-align: left;
+    list-style: none;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    padding-left: 14px;
+}
+
+.assinatura__descricao::marker{
+    content: '+';
+    font-size: 2rem;
+    margin-right: 8px;
+}
+
+
+/* container cards */
+.cards{
+    margin: 100px auto;
+}
+
+.title-cards{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.c__cards{
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.contents__card{
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    transition: transform 0.8s, background 0.8s, border 1s;
+}
+
+.contents__image{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 2s;
+}
+
+.contents__card:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--tertiary-color);
+}
+
+.contents__card:hover .contents__image {
+    opacity: 0;
+}  
+
+/* HBO Content */
+
+.contents__card:nth-child(1):hover {
+  background-image: url("../../../assets/imgs/hbo-hover_0.webp");
+}
+
+/* Max Originals Content */
+
+.contents__card:nth-child(2):hover {
+  background-image: url("../../../assets/imgs/MAX-Hover.webp");
+}
+
+/* DC Content */
+
+.contents__card:nth-child(3):hover {
+  background-image: url("../../../assets/imgs/DC-Hover.webp");
+}
+
+/* WB Content */
+
+.contents__card:nth-child(4):hover {
+  background-image: url("../../../assets/imgs/WB-Hover.webp");
+}
+
+/* CN Content */
+
+.contents__card:nth-child(5):hover {
+  background-image: url("../../../assets/imgs/CN-Hover.png");
+}
+
+/* Champions League Content */
+
+.contents__card:nth-child(6):hover {
+  background-image: url("../../../assets/imgs/UCL-Hover.webp");
+}
+
+
+@media (pointer: coarse) {
+    .contents__card:hover {
+      transform: none;
+    }
+  
+    .c-assinatura__cards:has(.assinatura__card:nth-child(1):hover) 
+    .assinatura__card:nth-child(2),
+    .c-assinatura__cards:has(.assinatura__card:nth-child(2):hover)
+    .assinatura__card:nth-child(1){
+        transform: none;
+    }
+  }
